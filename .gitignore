@@ -1,0 +1,19 @@
+# Database
+fx.db
+*.db
+
+# Logs
+*.log
+myscript.log
+cron.log
+
+# Test files
+*.json
+Test.py
+Resend_test.py
+cad_usd_alert.py
+cad_fx_alert_git.py
+
+# Python cache
+__pycache__/
+*.pyc

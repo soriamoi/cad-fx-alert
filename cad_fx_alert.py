@@ -4,8 +4,6 @@ import os
 import requests, resend, sqlite3, datetime as dt
 # import requests & resend: 'pip install resend requests' in Terminal
 
-init_db()
-
 # === CONFIG ===
 DB_PATH = "fx.db"
 
@@ -260,6 +258,8 @@ def backfill_last_30_days_gbp_only():
 
 
 # === RUN SCRIPT ===
+
+init_db() 
 
 if __name__ == "__main__":
     # init_db() 

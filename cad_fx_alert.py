@@ -263,7 +263,7 @@ if __name__ == "__main__":
     init_db() 
 
     # To backfill the last 30 days of GBP→CAD once, uncomment:
-    backfill_last_30_days_gbp_only()
-    exit(0)
+    # backfill_last_30_days_gbp_only()
+    # exit(0)
 
     daily_task()

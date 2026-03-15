@@ -1,21 +1,27 @@
 name: CAD FX Alert
 on:
   schedule:
-    - cron: '0 13 * * 1-5'  # Every Mon-Fri at 1PM PT
-  workflow_dispatch:        # Manual trigger button
+    - cron: '0 13 * * 1-5'  # Every Mon-Fri 1PM PT
+  workflow_dispatch:
 
 jobs:
   alert:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Set up Python
-      uses: actions/setup-python@v5
+      with:
+        path: .  # Ensure root checkout
+      
+    - name: Debug files
+      run: |
+        pwd
+        ls -la
+      
+    - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
         
-    - name: Install dependencies
+    - name: Install
       run: pip install requests resend
       
     - name: Run FX Alert

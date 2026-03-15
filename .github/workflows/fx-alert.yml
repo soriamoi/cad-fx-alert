@@ -28,4 +28,4 @@ jobs:
       env:
         RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         TO_EMAIL: ${{ secrets.TO_EMAIL }}
-      run: python fx_alert.py
+      run: python cad_fx_alert.py

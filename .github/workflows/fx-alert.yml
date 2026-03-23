@@ -1,7 +1,7 @@
 name: CAD FX Alert
 on:
   schedule:
-    - cron: '0 13 * * 1-5'  # Every Mon-Fri 1PM PT
+    - cron: '0 20 * * 1-5'  # Every Mon-Fri 1PM PT
   workflow_dispatch:
 
 jobs:
@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-      with:
-        path: .  # Ensure root checkout
       
     - name: Debug files
       run: |

@@ -196,9 +196,14 @@ def daily_task():
                 rate = extract_rate(obs, series_key)
                 upsert_rate(pair, date_str, rate)
 
-            latest = observations[-1]
-            date_str = latest["d"]
-            rate = extract_rate(latest, series_key)
+            # Get TRUE latest rate (not from recent=30)
+            all_obs = fetch_boc_observations(series_key)
+            latest_obs = max(all_obs, key=lambda x: x["d"])
+            
+            # latest = observations[-1]
+            
+            date_str = latest_obs["d"]
+            rate = extract_rate(latest_obs, series_key)
 
             logging.info(f"{pair} {date_str}: {rate:.4f}")
 
